@@ -14,7 +14,7 @@ export const COMMENTS_FIXTURE: Comment[] =  [
 	},
 	{
 		id: 2,
-		avatarURL: '../../assets/icons/SVG/happy.svg"',
+		avatarURL: '../../assets/icons/SVG/happy.svg',
 		authorID: '2',
 		authorName: 'Lancelot',
 		text: 'Blue.',
@@ -24,7 +24,7 @@ export const COMMENTS_FIXTURE: Comment[] =  [
 	},
 	{
 		id: 3,
-		avatarURL: '../../assets/icons/SVG/pacman.svg">',
+		avatarURL: '../../assets/icons/SVG/pacman.svg',
 		authorID: '1',
 		authorName: 'Bridgekeeper',
 		text: 'Right, off you go.',
@@ -38,10 +38,28 @@ export const COMMENTS_FIXTURE: Comment[] =  [
 	selector: 'home-component',
 	template: `
 		<h1>Home</h1>
-		<rdev-comments-component [comments]="comments" title="Demo Comments!"></rdev-comments-component>
+		<rdev-comments-component (onComment)="addComment($event)" [comments]="comments" title="Demo Comments!"></rdev-comments-component>
 	`
 })
 
 export class HomeComponent {
 	public comments: Comment[] = COMMENTS_FIXTURE;
+	public demoUser = {
+		id: '3',
+		avatarURL: '../../assets/icons/SVG/switch.svg',
+		name: 'Demo User'
+	};
+	public addComment(event): void {
+		const COMMENT: Comment = {
+			id: this.comments.length + 1,
+			avatarURL: this.demoUser.avatarURL,
+			authorID: this.demoUser.id,
+			authorName: this.demoUser.name,
+			text: event,
+			removed: false,
+			created_at: Date.now(),
+			replyOf: null
+		};
+		this.comments.push(COMMENT);
+	}
 }

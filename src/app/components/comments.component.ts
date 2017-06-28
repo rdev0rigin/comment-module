@@ -7,7 +7,7 @@ export interface Comment {
 	authorName: string;
 	text: string;
 	removed: boolean;
-	created_at: string;
+	created_at: string | number;
 	replyOf: string | number;
 }
 
@@ -34,7 +34,7 @@ export interface Comment {
 	</div>
 	<div class="comment-editor-container">
 		<textarea class="form-control" rows="5" [(ngModel)]="newComment"></textarea>
-		<button class="btn-inverse">Post</button>
+		<button class="btn-inverse" (click)="onComment.emit(newComment)">Post</button>
 	</div>
 	`
 })
@@ -46,6 +46,5 @@ export class RDevCommentsComponent {
 	@Output()
 	public onComment: EventEmitter<Comment> = new EventEmitter<Comment>();
 	public newComment: string = '';
-
 
 }
