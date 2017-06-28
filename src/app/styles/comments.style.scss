@@ -2,12 +2,18 @@ rdev-comments-component {
   .comments-container {
     display: flex;
     flex-direction: column;
+    background: grey;
+    color: white;
   }
 
   .info-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 5px;
+    padding: 5px;
+    color: black;
+    background: aliceblue;
   }
 
   .meta {

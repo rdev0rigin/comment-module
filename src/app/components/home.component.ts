@@ -9,7 +9,7 @@ export const COMMENTS_FIXTURE: Comment[] =  [
 		authorName: 'Bridgekeeper',
 		text: 'What is your favorite color?',
 		removed: false,
-		created_at: '',
+		created_at: '1498620029729',
 		replyOf: '',
 	},
 	{
@@ -19,7 +19,7 @@ export const COMMENTS_FIXTURE: Comment[] =  [
 		authorName: 'Lancelot',
 		text: 'Blue.',
 		removed: false,
-		created_at: '',
+		created_at: '1498620082577',
 		replyOf: '',
 	},
 	{
@@ -29,7 +29,7 @@ export const COMMENTS_FIXTURE: Comment[] =  [
 		authorName: 'Bridgekeeper',
 		text: 'Right, off you go.',
 		removed: false,
-		created_at: '',
+		created_at: '1498620095264',
 		replyOf: '',
 	}
 ];
