@@ -1,6 +1,6 @@
 {
   "name": "ngrdev-comment-module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An Angular Module made to inject a comment window.",
   "scripts": {
     "build": "webpack --display-error-details --progress",
@@ -37,7 +37,6 @@
     "socket.io": "^1.7.3",
     "zone.js": "^0.8.5",
     "socket.io-client": "~1.4.8"
-
   },
   "devDependencies": {
     "@types/node": "^7.0.5",
