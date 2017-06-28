@@ -1,2 +1,3 @@
-# comment-module
-An Angular module for injecting a comment component.
+# RDev Comment Module
+
+An Angular Module made to inject a comment window.

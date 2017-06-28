@@ -1,0 +1,17 @@
+rdev-comments-component {
+  .comments-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+  }
+}
