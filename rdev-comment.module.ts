@@ -20,7 +20,8 @@ const COMPONENTS = [
 		ReactiveFormsModule,
 	],
 	exports: [
-		COMPONENTS
+		COMPONENTS,
+		CommentsService
 	],
 	providers: [
 		CommentsService
