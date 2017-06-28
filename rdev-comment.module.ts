@@ -12,7 +12,8 @@ const COMPONENTS = [
 
 @NgModule({
 	declarations: [
-		COMPONENTS
+		COMPONENTS,
+		CommentsService
 	],
 	imports: [
 		BrowserModule,
@@ -32,4 +33,3 @@ const COMPONENTS = [
 })
 
 export class RDevCommentModule {}
-export {CommentsService} from './services/comments.service';
