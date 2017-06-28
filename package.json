@@ -1,6 +1,6 @@
 {
   "name": "ngrdev-comment-module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "An Angular Module made to inject a comment window.",
   "scripts": {
     "build": "webpack --display-error-details --progress",
