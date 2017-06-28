@@ -13,7 +13,6 @@ const COMPONENTS = [
 @NgModule({
 	declarations: [
 		COMPONENTS,
-		CommentsService
 	],
 	imports: [
 		BrowserModule,
@@ -22,7 +21,6 @@ const COMPONENTS = [
 	],
 	exports: [
 		COMPONENTS,
-		CommentsService
 	],
 	providers: [
 		CommentsService

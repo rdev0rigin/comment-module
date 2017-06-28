@@ -36,11 +36,11 @@ export class CommentsService {
 		for (let comment of comments){
 			if (comment.id === reply.reply_owner_id) {
 				comment.replies ? comment.replies = [reply, ...comment.replies] : comment.replies = [reply];
-				return comments
 			}
 			if (comment.replies){
-				return this.recursiveReplyInsert(comment.replies, reply);
+				comment.replies = this.recursiveReplyInsert(comment.replies, reply);
 			}
 		}
+		return comments;
 	}
 }

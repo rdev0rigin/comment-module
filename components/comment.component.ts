@@ -34,7 +34,9 @@ import {RDevComment} from '../models/comment.model';
 	</div>
 	<div class="reply-box">
 		<textarea cols="5" *ngIf="!!replyActive" [(ngModel)]="replyText"></textarea>
-		<button class="btn" *ngIf="!!replyActive" (click)="onReply.emit({parentComment: comment, text: replyText}); replyActive = false; replyText = ''">Post Reply</button>
+		<div class="reply-options">
+			<button class="btn" *ngIf="!!replyActive" (click)="onReply.emit({parentComment: comment, text: replyText}); replyActive = false; replyText = ''">Post Reply</button>
+		</div>
 		<div class="replies" *ngIf="comment.replies">
 			| reply to {{comment.authorName}} |
 			<comment-component *ngFor="let reply of comment.replies" (onReply)="onReply.emit($event)" [comment]="reply" [userID]="userID"></comment-component>

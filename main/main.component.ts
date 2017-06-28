@@ -1,5 +1,5 @@
 import {Component,} from '@angular/core';
-import '../styles/main.scss';
+// import '../styles/main.scss';
 
 @Component({
 	selector: 'main',
