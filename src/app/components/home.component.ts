@@ -38,7 +38,7 @@ export const COMMENTS_FIXTURE: Comment[] =  [
 	selector: 'home-component',
 	template: `
 		<h1>Home</h1>
-		<rdev-comments-component (onComment)="addComment($event)" [comments]="comments" title="Demo Comments!"></rdev-comments-component>
+		<rdev-comments-component (onComment)="addComment($event)" [userID]="demoUser.id" [comments]="comments" title="Demo Comments!"></rdev-comments-component>
 	`
 })
 

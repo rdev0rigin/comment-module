@@ -14,4 +14,11 @@ rdev-comments-component {
     display: flex;
     flex-direction: column;
   }
+
+  .text-body {
+    padding: 10px;
+    background: white;
+    color: black;
+    font-size: 1.3em;
+  }
 }

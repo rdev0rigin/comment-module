@@ -25,11 +25,13 @@ export interface Comment {
 					{{comment.authorName}}
 				</div>
 				<div class="meta">
-					<button class="btn-warning">Remove</button>
+					<button *ngIf="userID === comment.authorID && !comment.removed" class="btn-warning" (click)="comment.removed = true">Remove</button>
+					<button *ngIf="userID === comment.authorID && !!comment.removed" class="btn-warning" (click)="comment.removed = false">Un-Remove</button>
 					made: {{comment.created_at}}
 				</div>
 			</div>
-			<div class="text-body">{{comment.text}}</div>
+			<div class="text-body" *ngIf="!comment.removed">{{comment.text}}</div>
+			<div class="text-body" *ngIf="!!comment.removed">- Message Removed -</div>
 		</div>
 	</div>
 	<div class="comment-editor-container">
@@ -39,6 +41,8 @@ export interface Comment {
 	`
 })
 export class RDevCommentsComponent {
+	@Input()
+	public userID;
 	@Input()
 	public title: string = 'Leave A Comment Below.';
 	@Input()
