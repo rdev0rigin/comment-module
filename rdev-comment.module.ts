@@ -5,19 +5,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastModule} from 'ng2-toastr';
-import {MainComponent} from './main/main.component';
-import {HomeComponent} from './components/home.component';
 import {RDevCommentsComponent} from './components/comments.component';
 import {SafePipe} from './pipes/safe.pipe';
 
-const MAIN_ROUTES: Routes = [
-		{path: 'comments', component: HomeComponent},
-		// {path:'', redirectTo: '/starter', pathMatch: 'full'}
-];
 
 const COMPONENTS = [
-	// MainComponent,
-	// HomeComponent,
 	RDevCommentsComponent,
 	SafePipe
 ];
@@ -34,7 +26,6 @@ const COMPONENTS = [
 		FormsModule,
 		ReactiveFormsModule,
 		HttpModule,
-		RouterModule.forChild(MAIN_ROUTES),
 	],
 	exports: [
 		COMPONENTS
@@ -44,7 +35,6 @@ const COMPONENTS = [
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	],
-	// bootstrap: [ MainComponent ]
 })
 
 export class RDevCommentModule {}
