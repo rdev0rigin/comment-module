@@ -1,6 +1,6 @@
 import './polyfills.browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {RDevCommentModule} from './app/rdev-comment.module';
+import {RDevCommentModule} from '../app/rdev-comment.module';
 export const platformRef = platformBrowserDynamic();
 
 export function main() {

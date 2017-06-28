@@ -1,6 +1,6 @@
 {
-  "name": "rdev-comment-module",
-  "version": "0.0.0",
+  "name": "ngrdev-comment-module",
+  "version": "0.0.1",
   "description": "An Angular Module made to inject a comment window.",
   "scripts": {
     "build": "webpack --display-error-details --progress",
@@ -61,7 +61,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "#"
+    "url": "https://github.com/rdev0rigin/comment-module.git"
   },
   "bugs": {
     "url": "#"

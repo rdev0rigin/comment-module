@@ -35,8 +35,9 @@ export interface Comment {
 		</div>
 	</div>
 	<div class="comment-editor-container">
+		<div>Post A Comment</div>
 		<textarea class="form-control" rows="5" [(ngModel)]="newComment"></textarea>
-		<button class="btn-inverse" (click)="onComment.emit(newComment)">Post</button>
+		<button class="btn btn-inverse" (click)="onComment.emit(newComment); newComment =''">Post</button>
 	</div>
 	`
 })
