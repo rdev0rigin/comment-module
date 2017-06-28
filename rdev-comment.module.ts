@@ -16,7 +16,7 @@ const MAIN_ROUTES: Routes = [
 ];
 
 const COMPONENTS = [
-	MainComponent,
+	// MainComponent,
 	HomeComponent,
 	RDevCommentsComponent,
 	SafePipe
@@ -44,7 +44,7 @@ const COMPONENTS = [
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
 	],
-	bootstrap: [ MainComponent ]
+	// bootstrap: [ MainComponent ]
 })
 
 export class RDevCommentModule {}
