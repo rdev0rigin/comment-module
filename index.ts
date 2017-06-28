@@ -1,6 +1,7 @@
 import './polyfills.browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {RDevCommentModule} from '../app/rdev-comment.module';
+import {RDevCommentModule} from './rdev-demo-comment.module';
+import {enableProdMode} from '@angular/core';
 export const platformRef = platformBrowserDynamic();
 
 export function main() {
@@ -12,7 +13,7 @@ export function main() {
 switch (document.readyState) {
 	case 'interactive':
 	case 'complete':
-		//enableProdMode();
+		enableProdMode();
 		main();
 		break;
 	case 'loading':

@@ -1,47 +1,20 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 
-export interface Comment {
-	id: string | number;
-	avatarURL: string;
-	authorID: string | number;
-	authorName: string;
-	text: string;
-	removed: boolean;
-	created_at: string | number;
-	replyOf: string | number;
-}
-
 @Component({
 	selector: 'rdev-comments-component',
 	template: `
-	<div class="comments-container">
-		<strong>{{title}}</strong>
-		<div class="comment" *ngFor="let comment of comments">
-			<div class="info-box">
-				<div class="avatar">
-					<img [src]="comment.avatarURL">
-				</div>
-				<div class="name">
-					{{comment.authorName}}
-				</div>
-				<div class="meta">
-					<button *ngIf="userID === comment.authorID && !comment.removed" class="btn-warning" (click)="comment.removed = true">Remove</button>
-					<button *ngIf="userID === comment.authorID && !!comment.removed" class="btn-warning" (click)="comment.removed = false">Un-Remove</button>
-					made: {{comment.created_at}}
-				</div>
-			</div>
-			<div class="text-body" *ngIf="!comment.removed">{{comment.text}}</div>
-			<div class="text-body" *ngIf="!!comment.removed">- Message Removed -</div>
-		</div>
-	</div>
 	<div class="comment-editor-container">
 		<div>Post A Comment</div>
 		<textarea class="form-control" rows="5" [(ngModel)]="newComment"></textarea>
 		<button class="btn btn-inverse" (click)="onComment.emit(newComment); newComment =''">Post</button>
 	</div>
+	<div class="comments-container">
+		<strong>{{title}}</strong>
+		<comment-component *ngFor="let comment of comments" [comment]="comment" [userID]="userID" (onReply)="onReply.emit($event)"></comment-component>
+	</div>
 	`
 })
-export class RDevCommentsComponent {
+export class CommentsComponent {
 	@Input()
 	public userID;
 	@Input()
@@ -50,6 +23,8 @@ export class RDevCommentsComponent {
 	public comments: Comment[];
 	@Output()
 	public onComment: EventEmitter<Comment> = new EventEmitter<Comment>();
+	@Output()
+	public onReply: EventEmitter<any> = new EventEmitter<any>();
 	public newComment: string = '';
 
 }

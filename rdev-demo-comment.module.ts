@@ -8,7 +8,15 @@ import {CommentsComponent} from './components/comments.component';
 import {CommentComponent} from './components/comment.component';
 import {CommentsService} from './services/comments.service';
 
+const MAIN_ROUTES: Routes = [
+	{path: 'comments', children: [
+		{path:'', component: HomeComponent},
+	]}
+];
+
 const COMPONENTS = [
+	MainComponent,
+	HomeComponent,
 	CommentsComponent,
 	CommentComponent,
 ];
@@ -21,6 +29,7 @@ const COMPONENTS = [
 		BrowserModule,
 		FormsModule,
 		ReactiveFormsModule,
+		RouterModule.forRoot(MAIN_ROUTES),
 	],
 	exports: [
 		COMPONENTS

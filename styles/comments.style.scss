@@ -2,18 +2,48 @@ rdev-comments-component {
   .comments-container {
     display: flex;
     flex-direction: column;
-    background: grey;
-    color: white;
+  }
+
+  .comment-editor-container {
+    padding: 12px;
+  }
+
+  .avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 8px;
+  }
+
+  .comment {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    margin: 0 0 3px 0;
+  }
+
+  .comment-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%
   }
 
   .info-box {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top: 5px;
     padding: 5px;
     color: #585858;
     background: aliceblue;
+    :nth-child(n + 1) {
+      margin-right: 5px;
+    }
+
+    .separator {
+      color: lightgrey;
+    }
   }
 
   .meta {
@@ -26,5 +56,9 @@ rdev-comments-component {
     background: white;
     color: black;
     font-size: 1.3em;
+  }
+
+  .reply-box {
+    margin-left: 20px;
   }
 }
