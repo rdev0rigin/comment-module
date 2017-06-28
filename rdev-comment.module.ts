@@ -11,13 +11,13 @@ import {RDevCommentsComponent} from './components/comments.component';
 import {SafePipe} from './pipes/safe.pipe';
 
 const MAIN_ROUTES: Routes = [
-		{path: 'starter', component: HomeComponent},
-		{path:'', redirectTo: '/starter', pathMatch: 'full'}
+		{path: 'comments', component: HomeComponent},
+		// {path:'', redirectTo: '/starter', pathMatch: 'full'}
 ];
 
 const COMPONENTS = [
 	// MainComponent,
-	HomeComponent,
+	// HomeComponent,
 	RDevCommentsComponent,
 	SafePipe
 ];
@@ -34,7 +34,7 @@ const COMPONENTS = [
 		FormsModule,
 		ReactiveFormsModule,
 		HttpModule,
-		RouterModule.forRoot(MAIN_ROUTES),
+		RouterModule.forChild(MAIN_ROUTES),
 	],
 	exports: [
 		COMPONENTS
