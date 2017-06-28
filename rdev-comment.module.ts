@@ -20,8 +20,7 @@ const COMPONENTS = [
 		ReactiveFormsModule,
 	],
 	exports: [
-		COMPONENTS,
-		CommentsService
+		COMPONENTS
 	],
 	providers: [
 		CommentsService
@@ -32,3 +31,4 @@ const COMPONENTS = [
 })
 
 export class RDevCommentModule {}
+export {CommentsService} from './services/comments.service';
